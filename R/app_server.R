@@ -34,5 +34,6 @@ app_server <- function(input, output, session) {
   knn_server("knn", app)
   rf_server("rf", app)
 
-  waiter::waiter_hide()
+  # Keep the loading screen visible long enough for the walking cat to show.
+  later::later(function() shiny::withReactiveDomain(session, waiter::waiter_hide()), 2)
 }

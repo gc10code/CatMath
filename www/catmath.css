@@ -298,14 +298,22 @@ label, .control-label { font-weight: 700; color: var(--ink-soft); font-size: 12.
 .cm-loading { display: flex; flex-direction: column; align-items: center; gap: 18px; font-family: var(--font-title); }
 .cm-loading-title { font-size: 46px; font-weight: 700; color: var(--ink); letter-spacing: .03em; }
 .cm-loading-text { color: var(--ink-soft); font-size: 17px; }
-.cm-loading-track { width: 420px; max-width: 80vw; height: 200px; overflow: hidden; position: relative; }
-.cm-loading-cat {
-  position: absolute; width: 400px; height: 200px; transform: scale(.6); transform-origin: left center;
-  background: url("assets/loading_cat.png") 0 0 no-repeat;
-  animation: cm-walk 1.6s steps(12) infinite, cm-move 6s linear infinite;
+.cm-loading-track {
+  width: 640px; max-width: 90vw; height: 130px; overflow: hidden; position: relative;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 18%, #000 82%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 18%, #000 82%, transparent);
 }
-@keyframes cm-walk { from { background-position: 0 0; } to { background-position: 0 -2391px; } }
-@keyframes cm-move { from { left: -260px; } to { left: 100%; } }
+/* Sprite sheet: 4 columns of 400px; the walk cycle is the first column,
+   12 frames of 199.25px. Scaled to 60% with background-size (not transform)
+   so that frame offsets stay exact. The cat faces left, so it walks right -> left. */
+.cm-loading-cat {
+  position: absolute; top: 5px; left: 0; width: 240px; height: 119.55px;
+  background: url("assets/loading_cat.png") 0 0 / 960px auto no-repeat;
+  opacity: .8;
+  animation: cm-walk 1.2s steps(12) infinite, cm-move 5s linear infinite;
+}
+@keyframes cm-walk { from { background-position: 0 0; } to { background-position: 0 -1434.6px; } }
+@keyframes cm-move { from { transform: translateX(640px); } to { transform: translateX(-240px); } }
 
 /* ---- Misc AdminLTE overrides ---------------------------------------------------------- */
 
