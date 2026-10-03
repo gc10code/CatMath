@@ -91,4 +91,11 @@ testthat::test_dir("tests/testthat")
 
 ## License
 
-[MIT](LICENSE)
+CatMath is released under the [PolyForm Noncommercial License 1.0.0](LICENSE.md).
+
+You are free to use, study, modify and share it for **noncommercial purposes**: personal
+use, research, education, hobby projects, and use by charities, educational, public-research
+and government institutions. **Commercial use is not permitted** without a separate license
+from the author — open an issue on this repository to ask.
+
+The example datasets in `data/` keep their own licenses (see *Example data* above).
