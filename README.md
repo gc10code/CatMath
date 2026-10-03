@@ -2,7 +2,7 @@
 
 **CatMath** is a point-and-click statistics and machine-learning app written in R/Shiny.
 Load a dataset, clean it, explore it and model it: every analysis has its options on the
-left and its output — interactive charts and tables — on the right, in the spirit of JASP.
+left and its output — interactive charts and tables — on the right.
 
 ![Home](docs/home.png)
 
